@@ -52,6 +52,10 @@ table {
 }
 
 
+//---------------------------------------------------------------------------------------------------
+
+
+
 /*======Container=======*/
 .container{
     width: 100%;
@@ -60,7 +64,7 @@ table {
 
 }
 
-//media querires para as larguras do .container
+//media queries para as larguras do .container
 @media screen and (min-width:920px){
     .container{
         max-width: 80%;
@@ -69,7 +73,7 @@ table {
 
 
 /*====Linha====*/
-.linha{margin-left: -5px; margin-right: -5px;}
+.linha{margin-left: -5px; margin-right: -5px; background: yellow}
 
 
 
@@ -87,15 +91,108 @@ table {
     padding-right: 5px;
     width: 100%;
     margin-right: -4px;
+    position: relative;
+    word-wrap:break-word;
 }
 
 .coluna +.coluna{margin-left: 1.5%}
 
 
+//largunra da colina unica contexto container 100%: 6,866666667%
+//Fórmula para a obtenção: colunaUnica = (100 – (margin * (maxCol – 1))) / maxCol
 
-.coluna1{width:6.866666667% }
 
-.coluna2{width: 15.333333334%}
+//Fórmula para a obtenção das medidas de cada coluna
+//largColuna = (colunaUnica * numeroColunas) + (Margin * (numeroColunas – 1))
+
+/*====Medidas para as colunas=====*/
+// .coluna1{width:6.866666667%}
+
+// .coluna2{width: 15.333333334%;}
+
+// .coluna3{width: 23.800000001%}
+
+// .coluna4{width: 32.266666668%}
+
+// .coluna5{width: 40.733333335%}
+
+// .coluna6{width: 49.200000002%}
+
+// .coluna7{width: 57.666666669%}
+
+// .coluna8{width: 66.133333336%}
+
+// .coluna9{width: 74.600000003%}
+
+// .coluna10{width: 83.06666667%}
+
+// .coluna11{width: 91.533333337%}
+
+// .coluna12{width: 100%}
+
+
+// aparelhos de telas realmente pequenas terão apenas 2 colunas no máximo
+@media screen and(min-width:320px){
+  .coluna1,.coluna2,.coluna3,.coluna4,.coluna5
+    ,.coluna6,.coluna7,.coluna8,.coluna9,.coluna10
+    ,.coluna11,.coluna12,.colunaMed1,.colunaMed2,.colunaMed3
+    ,.colunaMed4,.colunaMed5,.colunaMed6{width: auto}
+    .colunaPeq1{width: 49.2%}
+    .colunaPeq2{width: 100%}
+
+//===========CENTRALIZAÇÃO DOS ELEMENTOS=========
+    .colunaPeq1.center{
+        left: 24.6%+0.75%;
+    }
+
+}
+
+
+
+///aparelhos mobile como tablet e celulares grandes terão apenas até 6 colunas
+@media screen and (min-width:480px){
+    .coluna1,.coluna2,.coluna3,.coluna4,.coluna5
+    ,.coluna6,.coluna7,.coluna8,.coluna9,.coluna10
+    ,.coluna11,.coluna12{width: auto}
+    .colunaMed1{width: 15.333333333%;}
+    .colunaMed2{width: 32.266666666%}
+    .colunaMed3{width: 49.199999999%}
+    .colunaMed4{width: 66.133333332%}
+    .colunaMed5{width: 83.066666665%}
+    .colunaMed6{width: 100%}
+
+//============ CRENTRALIZAÇÃO DOS ELEMENTOS ==========
+
+    .colunaMed1.center{
+        left:41.533333333%+0.75%;
+    }
+    .colunaMed2.center{
+        left: 33.066666666%+0.75%
+    }
+
+    .colunaMed3.center{
+        left:24.6%+0.75%;
+    }
+
+    .colunaMed4.center{
+        left:16.133333333%+0.75%;
+    }
+
+    .colunaMed5.center{
+        left:7.666666667%+0.75%
+    }
+}
+
+
+
+
+
+//Notebooks acima. Grid comum de 12 colunas
+@media screen and (min-width:720px){
+
+.coluna1{width:6.866666667%}
+
+.coluna2{width: 15.333333334%;}
 
 .coluna3{width: 23.800000001%}
 
@@ -118,31 +215,103 @@ table {
 .coluna12{width: 100%}
 
 
-///aparelhos mobile como tablet e celulares grandes terão apenas até 6 colunas
-@media screen and (min-width:480px){
-    .coluna1,.coluna2,.coluna3,.coluna4,.coluna5
-    ,.coluna6,.coluna7,.coluna8,.coluna9,.coluna10
-    ,.coluna11,.coluna12{width: auto}
-    .colunaMed1{width: 15.333333333%}
-    .colunaMed2{width: 32.266666666%}
-    .colunaMed3{width: 49.199999999%}
-    .colunaMed4{width: 66.133333332%}
-    .colunaMed5{width: 83.066666665%}
-    .colunaMed6{width: 100%}
+    //==========CENTRALIZAÇÃO DOS ELEMENTOS===========
+    .coluna1.center{
+        left:45.766666669%+0.75%;
+    }
+
+    .coluna2.center{
+        left:41.533333335%+0.75%;
+    }
+
+    .coluna3.center{
+        left:37.300000002%+0.75%;
+    }
+
+    .coluna4.center{
+        left:33.066666668%+0.75%;
+    }
+
+    .coluna5.center{
+        left:28.833333335%+0.75%;
+    }
+
+    .coluna6.center{
+        left:24.600000001%+0.75%;
+    }
+    .coluna7.center{
+        left:20.366666668%+0.75%;
+    }
+    .coluna8.center{
+        left:16.133333334%+0.75%;
+    }
+    .coluna9.center{
+        left:11.900000001%+0.75%;
+    }
+    .coluna10.center{
+        left:7.666666667%+0.75%
+    }
+    .coluna11.center{
+        left:3.433333334%+0.75%
+    }
 }
 
 
-// aparelhos de telas realmente pequenas terão apenas 2 colunas no máximo
-@media screen and(min-width:320px){
-  .coluna1,.coluna2,.coluna3,.coluna4,.coluna5
-    ,.coluna6,.coluna7,.coluna8,.coluna9,.coluna10
-    ,.coluna11,.coluna12,.colunaMed1,.colunaMed2,.colunaMed3
-    ,.colunaMed4,.colunaMed5,.colunaMed6{width: auto}
-    .colunaPeq1{width: 49.2%}
-    .colunaPeq2{width: 100%}
+//=========IMAGENS==========
+
+.responsiveImg{max-width: 100%;
+height: auto;
+display: block;}
+
+
+.roundImg{
+    border-radius: 5px;
+}
+
+.circleImg{
+    border-radius: 50%;
+}
+
+//===========TEXTO===========
+.txtEsquerda {
+  text-align: left;
+}
+.txtDireita {
+  text-align: right;
+}
+.txtCentro {
+  text-align: center;
+}
+.txtJustificado {
+  text-align: justify;
+}
+.txtNowrap {
+  white-space: nowrap;
+}
+.txtLowercase {
+  text-transform: lowercase;
+}
+.txtUppercase {
+  text-transform: uppercase;
+}
+.txtCapital {
+  text-transform: capitalize;
+}
+
+.citacao{
+    font-style: italic;
+    padding-left: 2em;
 }
 
 
-@media screen and (min-width:720px){
 
+//==========ALINHAMENTO DOS ELEMETOS==========
+
+.floatRight{
+    float: right;
 }
+
+.floatLeft{float: left}
+
+
+.clearFloat{clear: both;}
