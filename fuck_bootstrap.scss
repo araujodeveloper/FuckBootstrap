@@ -52,7 +52,20 @@ table {
 }
 
 
-//---------------------------------------------------------------------------------------------------
+//teste
+.teste{
+    background: #000;
+    color:#fff;
+    height: 3em;
+}
+
+.testeMob{
+    background: #abeafe;
+    height: 3em;
+}
+
+
+
 
 
 
@@ -64,7 +77,7 @@ table {
 
 }
 
-//media queries para as larguras do .container
+//media querires para as larguras do .container
 @media screen and (min-width:920px){
     .container{
         max-width: 80%;
@@ -98,6 +111,10 @@ table {
 .coluna +.coluna{margin-left: 1.5%}
 
 
+
+// largura de uma unica coluna: 5,291666667% contexto container 80%
+//Fórmula para a obtenção: colunaUnica = (80 – (margin * (maxCol – 1))) / maxCol
+
 //largunra da colina unica contexto container 100%: 6,866666667%
 //Fórmula para a obtenção: colunaUnica = (100 – (margin * (maxCol – 1))) / maxCol
 
@@ -106,6 +123,8 @@ table {
 //largColuna = (colunaUnica * numeroColunas) + (Margin * (numeroColunas – 1))
 
 /*====Medidas para as colunas=====*/
+
+//meddidas feitas para a perspectiva de container 80%, sendo que as colunas ocuparam o 100% de espaço destes 80% da tela (Dilmês mode:on)
 // .coluna1{width:6.866666667%}
 
 // .coluna2{width: 15.333333334%;}
@@ -130,7 +149,6 @@ table {
 
 // .coluna12{width: 100%}
 
-
 // aparelhos de telas realmente pequenas terão apenas 2 colunas no máximo
 @media screen and(min-width:320px){
   .coluna1,.coluna2,.coluna3,.coluna4,.coluna5
@@ -148,18 +166,17 @@ table {
 }
 
 
-
 ///aparelhos mobile como tablet e celulares grandes terão apenas até 6 colunas
 @media screen and (min-width:480px){
     .coluna1,.coluna2,.coluna3,.coluna4,.coluna5
     ,.coluna6,.coluna7,.coluna8,.coluna9,.coluna10
     ,.coluna11,.coluna12{width: auto}
     .colunaMed1{width: 15.333333333%;}
-    .colunaMed2{width: 32.266666666%}
-    .colunaMed3{width: 49.199999999%}
-    .colunaMed4{width: 66.133333332%}
-    .colunaMed5{width: 83.066666665%}
-    .colunaMed6{width: 100%}
+    .colunaMed2{width: 32.266666666%;}
+    .colunaMed3{width: 49.199999999%;}
+    .colunaMed4{width: 66.133333332%;}
+    .colunaMed5{width: 83.066666665%;}
+    .colunaMed6{width: 100%;}
 
 //============ CRENTRALIZAÇÃO DOS ELEMENTOS ==========
 
@@ -186,8 +203,6 @@ table {
 
 
 
-
-//Notebooks acima. Grid comum de 12 colunas
 @media screen and (min-width:720px){
 
 .coluna1{width:6.866666667%}
@@ -215,7 +230,7 @@ table {
 .coluna12{width: 100%}
 
 
-    //==========CENTRALIZAÇÃO DOS ELEMENTOS===========
+    //alinhamento dos elementos
     .coluna1.center{
         left:45.766666669%+0.75%;
     }
@@ -305,7 +320,7 @@ display: block;}
 
 
 
-//==========ALINHAMENTO DOS ELEMETOS==========
+//==========ALINHAMENTO DOS ELEMENTOS==========
 
 .floatRight{
     float: right;
